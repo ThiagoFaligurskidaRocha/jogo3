@@ -4214,6 +4214,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Platform,
 		C3.Behaviors.solid,
 		C3.Plugins.Keyboard,
+		C3.Plugins.Sprite.Cnds.OnCollision,
+		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.System.Acts.Scroll,
 		C3.Plugins.Sprite.Exps.X,
@@ -4221,12 +4223,11 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Behaviors.Platform.Acts.SimulateControl,
 		C3.Plugins.Keyboard.Cnds.IsKeyDown,
-		C3.Plugins.Sprite.Cnds.OnCollision,
 		C3.Plugins.System.Acts.SubVar,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.System.Acts.RestartLayout,
-		C3.Plugins.System.Acts.SetVar
+		C3.Plugins.System.Acts.ResetGlobals
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4235,8 +4236,10 @@ self.C3_JsPropNameTable = [
 	{Sólido: 0},
 	{Sprite: 0},
 	{Teclado: 0},
-	{espinho: 0},
 	{Sprite2: 0},
+	{Sprite3: 0},
+	{Sprite4: 0},
+	{Sprite5: 0},
 	{vida: 0}
 ];
 
@@ -4244,8 +4247,10 @@ self.InstanceType = {
 	personagem: class extends self.ISpriteInstance {},
 	Sprite: class extends self.ISpriteInstance {},
 	Teclado: class extends self.IInstance {},
-	espinho: class extends self.ISpriteInstance {},
-	Sprite2: class extends self.ISpriteInstance {}
+	Sprite2: class extends self.ISpriteInstance {},
+	Sprite3: class extends self.ISpriteInstance {},
+	Sprite4: class extends self.ISpriteInstance {},
+	Sprite5: class extends self.ISpriteInstance {}
 }
 }
 
@@ -4359,8 +4364,7 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
 		},
-		() => 0,
-		() => 3
+		() => 0
 ];
 
 
